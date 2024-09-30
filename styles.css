@@ -491,11 +491,24 @@ img {
   padding: 20px; /* Adjust padding to keep the text from hitting the edges */
   text-align: center; /* Aligns text to center */
   /* Remove background color, border, and box-shadow */
+  display:none;
 }
 
 .content-box p {
   margin: 5px 0; /* Adjusts the spacing between paragraphs */
   line-height: 1.6; /* Increases readability */
+}
+
+/* By default, hide the content */
+.content-box {
+  display: none;
+}
+
+/* Only display the content on screens wider than 992px (desktop view) */
+@media screen and (min-width: 992px) {
+  .content-box {
+    display: block;
+  }
 }
 
 
