@@ -155,7 +155,26 @@
       </p>
     </div>
 
+    <!--Mobile Para-->
+    <p class="mobile-only">Specializing in custom, fully responsive, SEO-optimized websites for e-commerce, fitness, and luxury car platforms, using modern technologies like HTML5, CSS3, JavaScript, and Odoo, with projects including Kleverwears, Highway Fitness, and Revzone.</p>
+
+    <style>
+        /* Show the paragraph only on mobile (below 768px width) */
+        @media only screen and (max-width: 768px) {
+            .mobile-only {
+                display: block;
+            }
+        }
     
+        /* Hide the paragraph on larger screens (desktop) */
+        @media only screen and (min-width: 769px) {
+            .mobile-only {
+                display: none;
+            }
+        }
+    </style>    
+
+
     <div class="work__container bd-grid">
         <a href="https://www.kleverwears.com/" class="work__img" target="_blank">
             <img src="work1.jpg" alt="">
