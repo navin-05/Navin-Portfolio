@@ -494,7 +494,7 @@ img {
 }
 
 .content-box p {
-  margin: 10px 0; /* Adjusts the spacing between paragraphs */
+  margin: 5px 0; /* Adjusts the spacing between paragraphs */
   line-height: 1.6; /* Increases readability */
 }
 
