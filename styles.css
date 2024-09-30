@@ -490,13 +490,12 @@ img {
   margin: 0 auto; /* Centers the box */
   padding: 20px; /* Adjust padding to keep the text from hitting the edges */
   text-align: center; /* Aligns text to center */
-  background-color: #f9f9f9; /* Background color for the box, you can customize it */
-  border: 1px solid #ddd; /* Border around the content */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds shadow for some depth */
+  /* Remove background color, border, and box-shadow */
 }
 
 .content-box p {
   margin: 10px 0; /* Adjusts the spacing between paragraphs */
   line-height: 1.6; /* Increases readability */
 }
+
 
