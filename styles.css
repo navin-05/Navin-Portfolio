@@ -322,6 +322,11 @@ img {
   transform: scale(1.1);
 }
 
+.ln{
+  font-size:small;
+  color:black;
+}
+
 /* ===== CONTACT =====*/
 .contact__input {
   width: 100%;
