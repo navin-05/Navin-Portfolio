@@ -346,6 +346,97 @@
 
             </section>
             
+<section>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Freelancer</title>
+    <script>
+        function sendFormData(event) {
+            event.preventDefault();
+
+            // Collect form data
+            const formData = new FormData(document.getElementById("contactForm"));
+            
+            // Send form data using AJAX
+            fetch("", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert("Email sent successfully!");
+                } else {
+                    alert("Failed to send email.");
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("An error occurred while sending the email.");
+            });
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Contact Freelancer</h2>
+
+    <form id="contactForm" onsubmit="sendFormData(event)">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Your Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="date">Select Date:</label><br>
+        <input type="date" id="date" name="date" required><br><br>
+
+        <label for="time">Select Time:</label><br>
+        <input type="time" id="time" name="time" required><br><br>
+
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" required></textarea><br><br>
+
+        <button type="submit">Send Request</button>
+    </form>
+
+</body>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $date = $_POST['date'];
+    $time = $_POST['time'];
+    $message = $_POST['message'];
+
+    // Freelancer's email
+    $to = "navinj630@gmail.com"; // Change this to your email ID
+    $subject = "New Contact Request from $name";
+    
+    // Email content
+    $body = "Name: $name\n";
+    $body .= "Email: $email\n";
+    $body .= "Preferred Date: $date\n";
+    $body .= "Preferred Time: $time\n";
+    $body .= "Message:\n$message";
+
+    // Email headers
+    $headers = "From: $email";
+
+    // Send email
+    if (mail($to, $subject, $body, $headers)) {
+        echo json_encode(["success" => true]);
+    } else {
+        echo json_encode(["success" => false]);
+    }
+}
+?>
+</html>
+
+</section>
+
         </main>
         
 
